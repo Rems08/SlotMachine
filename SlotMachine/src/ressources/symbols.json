@@ -1,15 +1,15 @@
 {
   "symbols": [
     {
-      "name": "seven",
+      "name": "Super",
       "image_url": "/ressources/assets/images/seven.png",
       "id": 1
     },{
-      "name": "bell",
+      "name": "Free",
       "image_url": "/ressources/assets/images/bell.png",
       "id": 2
     },{
-      "name": "bonus",
+      "name": "Bonus",
       "image_url": "/ressources/assets/images/bonus.png",
       "id": 3
     },{
