@@ -1,5 +1,5 @@
-import SlotMachine.Column;
-import SlotMachine.Symbol;
+import slotmachine.Column;
+import slotmachine.Symbol;
 
 //import org.json.JSONObject;
 //import org.json.simple.JSONArray;

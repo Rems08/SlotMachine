@@ -1,4 +1,4 @@
-package SlotMachine;
+package slotmachine;
 
 public class Symbol {
     private int id;

@@ -1,5 +1,5 @@
-package SlotMachine;
-import SlotMachine.Symbol;
+package slotmachine;
+import slotmachine.Symbol;
 //import org.json.JSONObject;
 
 import java.io.FileNotFoundException;
