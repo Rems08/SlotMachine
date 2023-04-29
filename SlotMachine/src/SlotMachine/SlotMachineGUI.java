@@ -37,21 +37,21 @@ public class SlotMachineGUI {
 
     private static ImageIcon[] loadImages(int width, int height, JSONArray symbols) {
         ImageIcon[] images = new ImageIcon[symbols.length()];
-
+    
         for (int i = 0; i < symbols.length(); i++) {
             String imageUrl = symbols.getJSONObject(i).getString("image_url");
-            ImageIcon imageIcon = new ImageIcon(imageUrl);
+            ImageIcon imageIcon = new ImageIcon(SlotMachineGUI.class.getResource(imageUrl));
             Image image = imageIcon.getImage().getScaledInstance(width, height, Image.SCALE_SMOOTH);
             images[i] = new ImageIcon(image);
         }
-
+    
         return images;
     }
 
     private static void createAndShowGUI() {
         // Charger les symboles à partir du fichier symbols.json
         JSONArray symbols = readSymbolsJSON();
-        ImageIcon[] images = loadImages(IMAGE_WIDTH, IMAGE_HEIGHT, symbols);
+        ImageIcon[] images = loadImages(90, 90, symbols);
 
         // Création de la fenêtre principale
         JFrame frame = new JFrame("Slot Machine");
@@ -86,14 +86,14 @@ public class SlotMachineGUI {
                 constraints.gridy = row;
 
                 if (row == 0) {
-                    constraints.anchor = GridBagConstraints.LINE_START;
-                    constraints.insets = new Insets(60, 30, 30, 10);
+                    constraints.anchor = GridBagConstraints.CENTER;
+                    constraints.insets = new Insets(60, 30, 30, 10); // top, left, bottom, right
                 } else if (row == 1) {
                     constraints.anchor = GridBagConstraints.CENTER;
-                    constraints.insets = new Insets(20, 20, 20, 10);
+                    constraints.insets = new Insets(60, 20, 20, 10);
                 } else {
-                    constraints.anchor = GridBagConstraints.LINE_END;
-                    constraints.insets = new Insets(0, 10, 10, 10);
+                    constraints.anchor = GridBagConstraints.CENTER;
+                    constraints.insets = new Insets(60, 10, 10, 10);
                 }
                 constraints.gridy += 1;
 
@@ -130,7 +130,7 @@ public class SlotMachineGUI {
         buttonConstraints.gridx = 2;
         buttonConstraints.gridy = 2;
         buttonConstraints.weightx = 0.0;
-        buttonConstraints.insets = new Insets(340, 16, 0, 0);
+        buttonConstraints.insets = new Insets(65, 16, 0, 0);
         buttonConstraints.anchor = GridBagConstraints.CENTER;
         buttonPanel.add(spinButton, buttonConstraints);
         
